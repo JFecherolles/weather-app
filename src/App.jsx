@@ -26,7 +26,6 @@ function App() {
       const response = await fetch(
         `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.VITE_API_KEY}`
       );
-      console.log(process.env.VITE_API_KEY);
       setLoading(true);
       const results = await response.json();
       if (results.length === 0) {
