@@ -18,4 +18,5 @@ export default defineConfig({
     'process.env': {},
     'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY),
   },
+  base: '/weather-app/',
 })
