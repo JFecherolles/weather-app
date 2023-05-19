@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { config } from 'dotenv'
+import dotenv from 'dotenv'
 
-config()
+dotenv.config()
 
 export default defineConfig({
   plugins: [react()],
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {},
-    'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY),
+    'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY || ''),
   },
   base: '/weather-app/',
 })
