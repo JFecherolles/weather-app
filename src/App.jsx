@@ -27,7 +27,7 @@ function App() {
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${import.meta.env.VITE_API_KEY}`
       );
       setLoading(true);
-      console.log(process.env.VITE_API_KEY);
+      console.log(import.meta.env.VITE_API_KEY);
       const results = await response.json();
       if (results.length === 0) {
         setError("No matching location found.");

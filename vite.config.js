@@ -15,7 +15,7 @@ export default defineConfig({
     sourcemap: true,
   },
   define: {
-    'process.env.VITE_API_KEY': JSON.stringify(import.meta.env.VITE_API_KEY || ''),
+    'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY || ''),
   },
   base: '/weather-app/',
 })
