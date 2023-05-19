@@ -24,7 +24,7 @@ function App() {
     }
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.VITE_API_KEY}`
       );
       setLoading(true);
       const results = await response.json();
@@ -35,7 +35,7 @@ function App() {
         const cityName = location.name;
         setCityName(cityName);
         const forecastResponse = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}&units=metric&lang=fr`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.VITE_API_KEY}&units=metric&lang=fr`
         );
         const forecastResult = await forecastResponse.json();
         setForecast(forecastResult.list);
